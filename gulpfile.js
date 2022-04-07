@@ -60,9 +60,8 @@ function watch(){
 
 const build = gulp.series(cleanDist, css, javascript, assets)
 
-
 exports.serve = server
-exports.watch = gulp.series(watch, build)
+exports.watch = gulp.parallel(watch, build)
 exports.clean = cleanDist
 exports.build = build
 exports.default = build
