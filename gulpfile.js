@@ -58,8 +58,11 @@ function watch(){
     gulp.watch([paths.javascript, paths.assets], gulp.series(css, javascript, assets))
 }
 
+const build = gulp.series(cleanDist, css, javascript, assets)
+
+
 exports.serve = server
-exports.watch = watch
+exports.watch = gulp.series(watch, build)
 exports.clean = cleanDist
-exports.build = gulp.series(cleanDist, css, javascript, assets)
-exports.default = exports.build
+exports.build = build
+exports.default = build

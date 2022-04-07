@@ -27,3 +27,4 @@ class App{
 
 const app = new App('Hello World')
 app.render('#app')
+app.something()
