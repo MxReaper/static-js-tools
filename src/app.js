@@ -1,5 +1,7 @@
 'use strict'
 
+var something = "hello"
+
 class App{
     
     constructor(name){
@@ -18,13 +20,17 @@ class App{
         }            
     }
 
-    something(){
-        console.log("something")
+    something(name){
+        console.log(name)
     }
 
 }
 
 
 const app = new App('Hello World')
+
+something = "helloworld"
+
+
 app.render('#app')
-app.something()
+app.something(something)
